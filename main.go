@@ -3,7 +3,7 @@ package main
 import(
   "strconv"
   "fmt"
-  "D:/golang-blockchain/blockchain"
+  "github.com/lukzhang/GoLang_Blockchai/blockchain"
 )
 
 

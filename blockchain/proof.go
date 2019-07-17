@@ -52,33 +52,33 @@ func (pow *ProofOfWork) InitData(nonce int) []byte{
   return data
 }
 
-func (pow *ProofOfWork) Run() (int, []byte){
-  var intHash big.Int
-  var hash [32]byte
+func (pow *ProofOfWork) Run() (int, []byte) {
+	var intHash big.Int
+	var hash [32]byte
 
-  nonce := 0
+	nonce := 0
 
-  for nonce < math.MaxInt64{
-    data := pow.InitData(nonce)
-    hash = sha256.Sum256(data)
+	for nonce < math.MaxInt64 {
+		data := pow.InitData(nonce)
+		hash = sha256.Sum256(data)
 
-    fmt.Printf("\r%x", hash)
-    intHash.SetBytes(hash[:])
+		fmt.Printf("\r%x", hash)
+		intHash.SetBytes(hash[:])
 
-    if(intHash.Cmp(pow.Target)==-1){
-      break
-    }
-    else{
-      nonce++
-    }
-  }
-  fmt.Println()
+		if intHash.Cmp(pow.Target) == -1 {
+			break
+		} else {
+			nonce++
+		}
 
-  return nonce, hash[:]
+	}
+	fmt.Println()
+
+	return nonce, hash[:]
 }
 
 func (pow *ProofOfWork) Validate() bool{
-  var inthash big.Int
+  var intHash big.Int
 
   data := pow.InitData(pow.Block.Nonce)
 

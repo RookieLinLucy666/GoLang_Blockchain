@@ -3,7 +3,7 @@ package main
 import(
   "strconv"
   "fmt"
-  "github.com/lukzhang/GoLang_Blockchai/blockchain"
+  "github.com/lukzhang/GoBlockchain/blockchain"
 )
 
 
@@ -15,13 +15,13 @@ func main(){
   chain.AddBlock("Second Block after Genesis")
   chain.AddBlock("Third Block after Genesis")
 
-  for _, block := range chain.blocks {
+  for _, block := range chain.Blocks {
     fmt.Printf("Previous Hash: %x\n", block.PrevHash)
     fmt.Printf("Data in Block: %s\n", block.Data)
     fmt.Printf("Hash: %x\n", block.Hash)
 
     pow := blockchain.NewProof(block)
-    fmt.Printf("PoW: %s\n", strconv.Formatool(pow.Validate()))
+    fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
     fmt.Println()
   }
 }

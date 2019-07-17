@@ -17,7 +17,7 @@ func CreateBlock(data string, prevHash []byte) *Block{
   pow := NewProof(block)
   nonce, hash := pow.Run()
 
-  block.hash = hash[:]
+  block.Hash = hash[:]
   block.Nonce = nonce
 
   return block

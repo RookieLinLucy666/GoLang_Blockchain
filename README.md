@@ -33,7 +33,7 @@ go run main.go createwallet
 
 ### In first terminal
 
-go run main.go createblockchain -address <TERMINAL1 WALLET>
+go run main.go createblockchain -address *TERMINAL1 WALLET*
   
   ### Go into /tmp and copy 'blocks_3000' folder for 4000 and 5000
   
@@ -49,7 +49,7 @@ go run main.go createblockchain -address <TERMINAL1 WALLET>
   
   cd ..
   
-  go run main.go send -from <TERMINAL1 WALLET> -to <TERMINAL2 WALLET> -amount 10 -mine
+  go run main.go send -from *TERMINAL1 WALLET* -to *TERMINAL2 WALLET* -amount 10 -mine
   
   ### start node
   
@@ -62,11 +62,11 @@ go run main.go
 
 ### In third terminal, start miner
 
-go run main.go startnode -miner <TERMINAL3 WALLET>
+go run main.go startnode -miner *TERMINAL3 WALLET*
   
  ### In second terminal, ctrl+c to stop the node and send a transaction from the 10 tokens it received earlier
  
- go run main.go send -from <TERMINAL2 WALLET> -to <TERMINAL3 WALLET> -amount 3
+ go run main.go send -from *TERMINAL2 WALLET* -to *TERMINAL3 WALLET* -amount 3
   
   ### You will see 3 tokens being sent as the miner mines a block. Terminal 1 which is running the node will show the block hash that was mined
   

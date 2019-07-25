@@ -56,9 +56,9 @@ go run main.go createblockchain -address *TERMINAL1 WALLET*
   go run main.go startnode
   
   
-### In second terminal, start node as well
+### In second terminal, start node as well. You will see the blocks being added to it syncs. Hence, terminal 1 contains a lead node in this case and is not completely decentralized
 
-go run main.go
+go run main.go startnode
 
 ### In third terminal, start miner
 
